@@ -6,7 +6,13 @@
 <p id="hid"></p>
 <p id="demo"></p>
 <p id="cal"></p>
+<p id="calc"></p>
+<p id="pers"></p>
+<p id="z" onclick="aa()">あいうえお</p>
 <script>
+function func(p1,p2){
+    return p1*p2;
+}
 document.getElementById("demo").innerHTML = 5 + 6;
 document.getElementById('hid').innerHTML=58;
 let x,y,z;
@@ -14,5 +20,18 @@ x=20000;
 y=5479835;
 z=345435454435;
 document.getElementById('cal').innerHTML=x+y+z;
+document.getElementById('calc').innerHTML=func(x,y);
+const person ={lastname:"kurosawa",firstname:"makina",age:32,fullName:function(){
+    return this.lastname+this.firstname;
+}};
+document.getElementById('pers').innerHTML=person.firstname+person.age+"歳"+person.fullName();
+
+function aa(){
+    if(document.getElementById("z").style.fontSize=="500px"){
+        document.getElementById("z").style.fontSize="20px";
+    }else{
+    document.getElementById("z").style.fontSize="500px";
+    }
+}
 </script>
 </html>
